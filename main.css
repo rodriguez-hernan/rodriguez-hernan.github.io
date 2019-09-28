@@ -110,6 +110,11 @@ h3 {
   margin: 1rem 0;
 }
 
+.about-text > span {
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .divider {
   width: 90%;
 }
@@ -141,6 +146,42 @@ a:link,
 a:visited {
   color: white;
   text-decoration: none;
+}
+
+/* Pages */
+.topic-page {
+  background-color: #333;
+  height: 100vh;
+}
+
+.page-header {
+  padding: 1rem;
+}
+
+.main-container {
+  background-color: #fff;
+  width: 98%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.page-title {
+  display: inline-block;
+  margin-left: 1rem;
+  color: lightgray;
+  font-weight: 100;
+  font-size: 1.8rem;
+}
+
+a.link {
+  display: inline-block;
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+a.link:hover {
+  text-decoration: underline;
 }
 
 /* For mobile phones: */
@@ -208,7 +249,7 @@ a:visited {
 
 
 
-
+/* animations */
 @keyframes moveInRight {
   0% {
     opacity: 0;
