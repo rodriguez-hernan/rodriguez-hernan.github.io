@@ -151,7 +151,8 @@ a:visited {
 /* Pages */
 .topic-page {
   background-color: #333;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 5rem;
 }
 
 .page-header {
@@ -184,9 +185,48 @@ a.link:hover {
   text-decoration: underline;
 }
 
+a.topic-link {
+  color: #000;
+  font-style: oblique;
+}
+a.topic-link::after { content: "'"; }
+a.topic-link::before { content: "'"; }
+
+
+pre.problem-explanation {
+  background-color: #eee;
+  border: 1px solid #777;
+  border-radius: 7px;
+  font-size: .85rem;
+}
+
+.explanation {
+  margin: 2rem 0;
+  vertical-align: bottom;
+}
+
+.code {
+  background-color: #fff;
+  border: 1px solid #777;
+  border-radius: 7px;
+  color: #000;
+  font-family: 'monospace';
+  font-size: .85rem;
+  max-height: 290px;
+}
+
+.inline {
+  display: inline-block;
+}
+
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
+}
+
+.row {
+  display: block;
+  margin: 1rem 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -210,6 +250,10 @@ a.link:hover {
     background-color: #000;
     background-size: 100%;
     background-repeat: no-repeat;
+  }
+  
+  .row {
+    display: flex;
   }
 
   main {
@@ -244,6 +288,14 @@ a.link:hover {
   p > strong {
     font-size: 1.6rem;
     font-style: italic;
+  }
+
+  pre.problem-explanation, .code {
+    font-size: 1.3rem;
+  }
+
+  .explanation {
+    margin-right: 2rem;
   }
 }
 
