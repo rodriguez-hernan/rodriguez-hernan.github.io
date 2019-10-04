@@ -15,7 +15,28 @@
       <h2 class="page-title">JavaScript Objects</h2>
     </div>
     <div class="main-container">
-      Some content
+      <h3>Explanation:</h3>
+      <div class="explanation">
+        In this topic I decided to create a simple app that will take a few inputs to register books.
+        When the "Add" button is clicked, the inputs are taken and a Book object is created.
+        All the books are added to a bookShelf array, that will 
+        be displayed as a list under the form. <br>
+        You can click on any book title you see in the list to check out the object information.
+      </div>
+
+      <div class="bookform">
+        <h3>Add a book</h3>
+
+        <input type="text" placeholder="Title" id="newBook-title" size=20 />
+        <input type="text" placeholder="Author" id="newBook-author" size=20 />
+        <input type="numer" placeholder="Pages" id="newBook-pages" size=20 />
+        
+        <button onclick="addBook()">Add</button>
+      </div>
+      <div class="book-shelf">
+        <ul id="books"></ul>
+      </div>
+      <div id="book-detail"></div>
     </div>
   </div>
 </body>

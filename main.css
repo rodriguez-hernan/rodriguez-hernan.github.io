@@ -152,6 +152,7 @@ a:visited {
 .topic-page {
   background-color: #333;
   height: 100%;
+  min-height: 100vh;
   padding-bottom: 5rem;
 }
 
@@ -218,6 +219,39 @@ pre.problem-explanation {
 
 .inline {
   display: inline-block;
+}
+
+/* Javascript Objects */
+.bookform {
+  width: 50%;
+}
+
+.bookform input {
+  display: block;
+}
+
+.bookform button {
+  width: 10em;
+  height: 1.5em;
+  background-color: rgba(68, 68, 68, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  margin: 17px;
+}
+
+#books {
+  list-style: upper-roman;
+  margin-left: 2rem;
+}
+
+#books > li { transition: all .2s; }
+#books > li:hover {
+  cursor: pointer;
+  color: #7d53a8;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transform: skewX(-0.02turn);
 }
 
 /* For mobile phones: */
