@@ -85,11 +85,11 @@ function localAJAX() {
     if (this.readyState == 4 && this.status == 200) {
       // do something with the data
       console.log('data: ', this.responseText);
-      processStudentsData(this.responseText);
+      processLotrData(this.responseText);
     }
   };
   // set the URL
-  const url = '../assets/students.json';
+  const url = '../assets/lotr.json';
   // execute the ajax call
   xhttp.open("GET", url, true);
   xhttp.send();
@@ -104,12 +104,16 @@ function processCharactersData(data) {
   })
 };
 
-function processStudentsData(data) {
+function processLotrData(data) {
   const obj = JSON.parse(data);
-  const students = obj.students !== undefined ? obj.students : [{name: 'no name'}];
+  const characters = obj.characters !== undefined ? obj.characters : [{name: 'no name'}];
   // process data
-  students.forEach( student => {
-    document.getElementById("local-content").innerHTML += student.name + '<br />';
+  characters.forEach( character => {
+    document.getElementById("local-content").innerHTML += character.name + '<br />';
   })
 };
 
+function clearData(){
+  document.getElementById("local-content").innerHTML = "";
+  document.getElementById("external-content").innerHTML = "";
+}

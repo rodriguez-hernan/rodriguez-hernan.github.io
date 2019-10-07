@@ -1,0 +1,50 @@
+{
+  "characters": [
+    {
+      "name": "Aragorn",
+      "race": "Men",
+      "title": [
+        "Chieftain of the Dúnedain",
+        "King of the Reunited Kingdom"]
+    },
+    {
+      "name": "Gandalf",
+      "race": "Ainur",
+      "title": [
+        "Istar (Wizard)",
+        "Servant of the Secret Fire",
+        "Wielder of the Flame of Anor",
+        "Ring-bearer",
+        "Elf-friend"]
+    },
+    {
+      "name": "Gollum",
+      "race": "Hobbits",
+      "title": ["Ring-bearer"]
+    },
+    {
+      "name": "Sauron",
+      "race": "Ainur",
+      "title": [
+          "Abhorred",
+          "Sauron the Great",
+          "Lord of Wolves",
+          "Lord of Gifts",
+          "the Deceiver",
+          "Dark Lord",
+          "Lord of Mordor",
+          "Lord of Barad-dûr",
+          "Lord of the Earth",
+          "Lord of the Rings"]
+    },
+    {
+      "name": "Galadriel",
+      "race": "Elves",
+      "title": [
+        "Lady of Lórien",
+        "Lady of the Galadhrim",
+        "Lady of the Wood",
+        "Lady of Light"]
+    }
+  ]
+}
