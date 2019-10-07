@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "name": "Dwight",
+      "age": 24,
+      "major": "Bear studies",
+      "nationality": "American"
+    },
+    {
+      "name": "Jim",
+      "age": 22,
+      "major": "Sales",
+      "nationality": "Canadian"
+    },
+    {
+      "name": "Pam",
+      "age": 20,
+      "major": "Art",
+      "nationality": "American"
+    }
+  ]
+}

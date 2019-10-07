@@ -10,12 +10,10 @@ class Book {
   showObj() {
     return this;
   }
-}
+};
 
 const bookShelf = [];
 
-
-// functions
 function addBook(){
   const title = document.getElementById("newBook-title").value;
   const author = document.getElementById("newBook-author").value;
@@ -28,13 +26,13 @@ function addBook(){
   console.log(newBook.showObj());
   console.log(bookShelf);
   
-}
+};
 
 function cleanInputs() {
   document.getElementById("newBook-title").value = "";
   document.getElementById("newBook-author").value = "";
   document.getElementById("newBook-pages").value = "";
-}
+};
 
 function addBookToShelf(book){  
   var node = document.createElement("LI");
@@ -45,10 +43,72 @@ function addBookToShelf(book){
   node.appendChild(textnode);
 
   document.getElementById("books").appendChild(node);
-}
+};
 
 function showInfo(id){
   const selectedBook =  bookShelf[id - 1];
   var bookJSON = JSON.stringify(selectedBook);
   document.getElementById("book-detail").innerHTML = bookJSON;
 };
+
+
+// AJAX page
+
+function externalAJAX() {
+  // create instance of XMLHttpRequest
+  const xhttp = new XMLHttpRequest();
+
+  // create a callback function
+  xhttp.onreadystatechange = function() {
+    // readyState property holds the status of the XMLHttpRequest.
+    if (this.readyState == 4 && this.status == 200) {
+      // do something with the data
+      console.log('data: ', this.responseText);
+      processCharactersData(this.responseText);
+    }
+  };
+  // set the URL
+  const url = 'https://swapi.co/api/people/';
+  // execute the ajax call
+  xhttp.open("GET", url, true);
+  xhttp.send();
+};
+
+function localAJAX() {
+  // create instance of XMLHttpRequest
+  const xhttp = new XMLHttpRequest();
+
+  // create a callback function
+  xhttp.onreadystatechange = function() {
+    // readyState property holds the status of the XMLHttpRequest.
+    if (this.readyState == 4 && this.status == 200) {
+      // do something with the data
+      console.log('data: ', this.responseText);
+      processStudentsData(this.responseText);
+    }
+  };
+  // set the URL
+  const url = '../assets/students.json';
+  // execute the ajax call
+  xhttp.open("GET", url, true);
+  xhttp.send();
+};
+
+function processCharactersData(data) {
+  const obj = JSON.parse(data);
+  const characters = obj.results !== undefined ? obj.results : [{name: 'no name'}];
+  // process data
+  characters.forEach( character => {
+    document.getElementById("external-content").innerHTML += character.name + '<br />';
+  })
+};
+
+function processStudentsData(data) {
+  const obj = JSON.parse(data);
+  const students = obj.students !== undefined ? obj.students : [{name: 'no name'}];
+  // process data
+  students.forEach( student => {
+    document.getElementById("local-content").innerHTML += student.name + '<br />';
+  })
+};
+
