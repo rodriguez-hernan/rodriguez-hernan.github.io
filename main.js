@@ -53,7 +53,8 @@ function showInfo(id){
 
 
 // AJAX page
-
+// for requests codes and status description, check link below
+// https://www.w3schools.com/js/js_ajax_http.asp
 function externalAJAX() {
   // create instance of XMLHttpRequest
   const xhttp = new XMLHttpRequest();
