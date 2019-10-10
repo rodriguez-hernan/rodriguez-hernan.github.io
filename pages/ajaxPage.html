@@ -14,16 +14,27 @@
       <a href="../index.html" class="link">Back Home</a>
       <h2 class="page-title">AJAX</h2>
     </div>
-    <div class="main-container">
-      <div class="ajax-data">
-        <button onclick="externalAJAX()">Click for external ajax</button>
-        <div id="external-content"></div>  
+    <div class="main-container flexible">
+      <div class="button-group">
+        <div class="ajax-data">
+          <button class="btn" onclick="externalAJAX()">Click for external ajax</button>
+          <div id="external-content"></div>  
+        </div>
+        <div class="ajax-data">
+          <button class="btn" onclick="localAJAX()">Click for local ajax</button>
+          <div id="local-content"></div>  
+        </div>
+        <button class="btn" onclick="clearData()">Clear Data</button>
       </div>
-      <div class="ajax-data">
-        <button onclick="localAJAX()">Click for local ajax</button>
-        <div id="local-content"></div>  
+      <div class="explanation explanation-left">
+        In this page you can interact with these 3 buttons. The first one calls an external api
+        called SWAPI <a href="https://swapi.co/" class="topic-link">swapi.co</a> that retrieves data of
+        characters of Star Wars.<br>
+        The second button, makes also an AJAX request, but the function fetches a local json from this project.
+        <br> In both cases, the data is processed and displayed in the screen.
+        <br> The last button is there to clean up the screen.
+        <br> NOTE: if you open the console of the browser (F12), you can see the data we are obtaining.
       </div>
-      <button onclick="clearData()">Clear Data</button>
     </div>
   </div>
 </body>

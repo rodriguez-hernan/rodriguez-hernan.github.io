@@ -254,6 +254,23 @@ pre.problem-explanation {
   transform: skewX(-0.02turn);
 }
 
+/* AJAX */
+.btn {
+  width: 15rem;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  background: #7d53a8;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 1px 3px 5px black
+}
+
+.ajax-data > div {
+  padding: 0 2rem;
+}
+
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -332,6 +349,17 @@ pre.problem-explanation {
   .explanation {
     margin-right: 2rem;
   }
+
+  .flexible{
+    display: flex;
+    justify-content: space-between;
+  }
+  .explanation-left {
+    max-width: 40rem;
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
 }
 
 
