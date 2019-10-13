@@ -15,7 +15,27 @@
       <h2 class="page-title">JSON</h2>
     </div>
     <div class="main-container">
-      Some content
+      <h3>Explanation:</h3>
+      <div class="explanation">
+        In this section I am using the Star Wars API to get information about the characters. There is a list
+        provided of 87 characters, so with this app we can look at the information available.
+        Just fill in a number and look at the JSON object we receive.<br>
+        I also added 2 buttons to check the Species and World Home of the selected character.<br>
+        To be able to do this, I had to parse the data into an object, retreive the corresponding data
+        and make a new request.
+      </div>
+      <h3>Check the information of a Star wars Character</h3>
+      <h4>Select a number from 2 to 87</h4>
+      <input type="number" space="5" id="peopleID" min="2" max="87">
+      <button onclick="fetchCharacter()" class="btn btn-large">Search</button>
+      <button onclick="clearJSONData()" class="btn btn-large">Clear All</button>
+      <div id="character-info" class="data-container"></div>
+      
+      <button class="hidden btn" onclick="fetchHomeWorld()">Click to see home world</button>
+      <div id="character-home" class="data-container"></div>
+      
+      <button class="hidden btn" onclick="fetchSpecie()">Click to see species</button>
+      <div id="character-specie" class="data-container"></div>
     </div>
   </div>
 </body>

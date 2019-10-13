@@ -117,3 +117,64 @@ function clearData(){
   document.getElementById("local-content").innerHTML = "";
   document.getElementById("external-content").innerHTML = "";
 }
+
+// JSON page
+
+let jsonCharacter = null;
+
+function fetchCharacter() {
+  const id = document.getElementById("peopleID").value;
+  console.log('fetching character ', id);
+  if (!id){
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    document.getElementById("character-info").innerHTML = "Searching";
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      let str = this.responseText.replace(/",/g, "\",<br>");
+      document.getElementById("character-info").innerHTML = str;
+      jsonCharacter = JSON.parse(this.responseText);
+      showButtons();
+    } else if (this.status == 404) {
+      document.getElementById("character-info").innerHTML = "Character not found. Try another";
+    }
+  };
+  const url = `https://swapi.co/api/people/${id}`;
+  xhttp.open("GET", url, true);
+  xhttp.send();
+};
+
+function showButtons(){
+  document.querySelectorAll("button.hidden").forEach( el => el.classList.remove("hidden"));
+}
+
+function fetchHomeWorld(){ 
+  fetchData("character-home", jsonCharacter.homeworld);
+}
+
+function fetchSpecie(){ 
+  fetchData("character-specie", jsonCharacter.species[0]);
+}
+
+function fetchData(field, url) {
+  console.log('params', field, url)
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let str = this.responseText.replace(/",/g, "\",<br>");
+      document.getElementById(field).innerHTML = str;
+    } else if (this.status == 404) {
+      document.getElementById(field).innerHTML = "Data requested not found.";
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function clearJSONData(){
+  document.getElementById("character-info").innerHTML = "";
+  document.getElementById("character-home").innerHTML = "";
+  document.getElementById("character-specie").innerHTML = "";
+}

@@ -267,8 +267,21 @@ pre.problem-explanation {
   box-shadow: 1px 3px 5px black
 }
 
+.btn-large {
+  padding: .6rem;
+  font-size: 1.5rem;
+}
+
 .ajax-data > div {
   padding: 0 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.data-container {
+  word-wrap: break-word;
 }
 
 /* For mobile phones: */
@@ -359,10 +372,7 @@ pre.problem-explanation {
     margin-top: 0;
     margin-left: 2rem;
   }
-
 }
-
-
 
 /* animations */
 @keyframes moveInRight {
