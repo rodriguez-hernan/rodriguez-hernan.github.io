@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>H. Rod - Portfolio | Local Storage & DOM Manipulation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
+  <script src='../main.js'></script>
+</head>
+<body>
+  <div class="topic-page">
+    <div class="page-header">
+      <a href="../index.html" class="link">Back Home</a>
+      <h2 class="page-title">Local Storage & DOM Manipulation</h2>
+    </div>
+    <div class="main-container">
+      <h3>Explanation:</h3>
+      <div class="explanation">
+        In this section I am using the Star Wars API to get information about the characters. There is a list
+        provided of 87 characters, so with this app we can look at the information available.
+        Just fill in a number and look at the JSON object we receive.<br>
+        I also added 2 buttons to check the Species and World Home of the selected character.<br>
+        To be able to do this, I had to parse the data into an object, retreive the corresponding data
+        and make a new request.
+      </div>
+      <div class="post-container">
+        <h3 class="post-container__title">Add a permanent post!</h3>
+        <fieldset title="Post">
+          <p class="post__title-label">Add a title</p>
+          <input type="text" placeholder="John" id="post-title">
+          <textarea
+            name="post"
+            id="post-content"
+            cols="30"
+            rows="5"
+            placeholder="Type something here to post..."
+            ></textarea>
+            <button onclick="addPost()">Submit!</button>
+        </fieldset>
+        <div class="post-container__list" id="post-list">
+          <div class="post">
+            <h4 class="post__title"></h4>
+            <p class="post__content"></p>
+            <button class="post__button"" onclick="removePost()">Remove Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
