@@ -284,6 +284,11 @@ pre.problem-explanation {
   word-wrap: break-word;
 }
 
+
+/*  local storage and DOM */
+
+
+
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;

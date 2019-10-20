@@ -6,9 +6,9 @@
   <title>H. Rod - Portfolio | Local Storage & DOM Manipulation</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
-  <script src='../main.js'></script>
+  <script src='../js/post.js'></script>
 </head>
-<body>
+<body onload="renderPostList()">
   <div class="topic-page">
     <div class="page-header">
       <a href="../index.html" class="link">Back Home</a>
@@ -39,11 +39,6 @@
             <button onclick="addPost()">Submit!</button>
         </fieldset>
         <div class="post-container__list" id="post-list">
-          <div class="post">
-            <h4 class="post__title"></h4>
-            <p class="post__content"></p>
-            <button class="post__button"" onclick="removePost()">Remove Post</button>
-          </div>
         </div>
       </div>
     </div>
