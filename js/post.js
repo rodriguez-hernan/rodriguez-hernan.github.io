@@ -45,8 +45,8 @@ function renderPostList() {
     let buttonNode = generateElement("BUTTON", "post__button", "Delete Post");
     buttonNode.setAttribute("onclick", `removePost(${index})`);
     
-    node.appendChild(titleNode);
     node.appendChild(contentNode);
+    node.appendChild(titleNode);
     node.appendChild(buttonNode);
     document.getElementById("post-list").appendChild(node);
   })

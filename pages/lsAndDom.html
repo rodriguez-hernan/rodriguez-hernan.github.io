@@ -17,16 +17,15 @@
     <div class="main-container">
       <h3>Explanation:</h3>
       <div class="explanation">
-        In this section I am using the Star Wars API to get information about the characters. There is a list
-        provided of 87 characters, so with this app we can look at the information available.
-        Just fill in a number and look at the JSON object we receive.<br>
-        I also added 2 buttons to check the Species and World Home of the selected character.<br>
-        To be able to do this, I had to parse the data into an object, retreive the corresponding data
-        and make a new request.
+        In this section I created a form to add a post. When the user clicks on the submit button
+        the data will be stored in the LocalStorage, so even after a refresh, the data will remain.
+        <br> The submit button will fetch the data provided and will create elements in the page to
+        render the post in a nice display.<br>
+        So go on, add post and refresh the page!
       </div>
       <div class="post-container">
         <h3 class="post-container__title">Add a permanent post!</h3>
-        <fieldset title="Post">
+        <fieldset class="post-container__fieldset" title="Post">
           <p class="post__title-label">Add a title</p>
           <input type="text" placeholder="John" id="post-title">
           <textarea
@@ -36,7 +35,7 @@
             rows="5"
             placeholder="Type something here to post..."
             ></textarea>
-            <button onclick="addPost()">Submit!</button>
+            <button class="btn" onclick="addPost()">Submit!</button>
         </fieldset>
         <div class="post-container__list" id="post-list">
         </div>

@@ -286,8 +286,44 @@ pre.problem-explanation {
 
 
 /*  local storage and DOM */
+.post-container__list {
+  margin-top: 2rem;
+}
 
+.post-container__fieldset {
+  display: flex;
+}
 
+.post {
+  width: 30rem;
+  border: 1px solid blue;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.post__button {
+  padding: .5rem;
+  background-color: #819cb5;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+.post__content {
+  color: black;
+}
+
+.post__title {
+  font-size: 1rem;
+  color: black;
+}
+
+.post__title::before {
+  content: "- ";
+}
 
 /* For mobile phones: */
 [class*="col-"] {
