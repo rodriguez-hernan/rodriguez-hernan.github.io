@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>H. Rod - Portfolio | CSS with JS & Transitions, Animations</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../css/topics78.css'>
+  <script src='../js/cssManipulation.js'></script>
+</head>
+<body>
+  <div class="header">
+    <h3 class="title">
+      Transitions and animations
+    </h3>
+    <p>Modify the values to play with the css surrounding the scripture</p>
+  </div>
+  <div class="container">
+    <div class="left-column">
+      <label for="fontSize">Font size</label>
+      <input type="number" value="12" id="fontSize" onchange="changeFont(this)">
+      <br />
+      <label for="padding">Padding</label>
+      <input type="number" value="3" id="padding" onchange="changePadding(this)">
+      <br />
+      <label for="wordSpacing">Word spacing</label>
+      <input type="number" value="1" id="wordSpacing" onchange="changeWS(this)">
+    </div>
+    <div class="center">
+      <p id="scripture">
+        And I said unto them: If God had commanded me to do all things I could do them. If he should command me that I should say unto this water, be thou earth, it should be earth; and if I should say it, it would be done.
+      </p>
+    </div>
+    <div class="right-column">
+      <label for="backgroundColor">Background color</label>
+      <input type="color" id="backgroundColor" onchange="changeBackColor(this)">
+      <br/>
+      <label for="textColor">Text color</label>
+      <input type="color" id="textColor" onchange="changeColor(this)">
+      <br/>
+      <label for="fontFamily">Font family</label>
+      <select name="fontSelect" id="fontFamily" onchange="changeFontFamily(this)">
+        <option value="sanz-serif">Sanz-serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="Lora">Lora</option>
+        <option value="Oswald">Oswald</option>
+      </select>
+    </div>
+    <div class="bottom">
+      <label for="animation1">Animation 1</label>
+      <input type="checkbox" id="animation1" onchange="setAnimation1(this)">
+      
+      <label for="animation2">Animation 2</label>
+      <input type="checkbox" id="animation2" onchange="setAnimation2(this)">
+      
+      <label for="animation3">Animation 3</label>
+      <input type="checkbox" id="animation3" onchange="setAnimation3(this)">
+    </div>
+  </div>
+</body>
+</html>

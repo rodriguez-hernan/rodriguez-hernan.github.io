@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Oswald&display=swap');
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.left-column,
+.center,
+.right-column,
+.bottom {
+  width: 31%;
+}
+
+.bottom {
+  flex-grow: 1;
+  text-align: center;
+  pad: 2rem;
+  margin-top: 3rem;
+}
+.right-column {
+  text-align: right;
+}
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Lora', serif;
+*/
