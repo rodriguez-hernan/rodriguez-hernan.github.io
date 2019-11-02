@@ -1,29 +1,98 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|Oswald&display=swap');
-
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem;
 }
 
 .left-column,
 .center,
 .right-column,
 .bottom {
-  width: 31%;
+    width: 31%;
 }
 
 .bottom {
-  flex-grow: 1;
-  text-align: center;
-  pad: 2rem;
-  margin-top: 3rem;
+    flex-grow: 1;
+    text-align: center;
+    pad: 2rem;
+    margin-top: 3rem;
 }
+
 .right-column {
-  text-align: right;
+    text-align: right;
 }
+
+
 /*
 font-family: 'Oswald', sans-serif;
 font-family: 'Lora', serif;
 */
+
+.animation-1 {
+    background-color: yellow;
+    transition: 2s ease-out;
+    animation-name: colorChange;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes colorChange {
+    from {
+        background-color: red;
+        transform: scale(1.2);
+    }
+    to {
+        background-color: yellow;
+        transform: scale(1);
+    }
+}
+
+.animation-2 {
+    background-color: #777;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 2s ease-in;
+    animation-name: moveDiv;
+    animation-duration: 5s;
+}
+
+@-webkit-keyframes moveDiv {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(20deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animation-3 {
+    padding: 20px;
+    border-radius: 8px;
+    animation: glow 2s infinite;
+}
+
+@-webkit-keyframes glow {
+    0% {
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+        box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+    }
+    50% {
+        -webkit-box-shadow: 0px 0px 30px 15px rgba(136, 196, 235, 0.7);
+        -moz-box-shadow: 0px 0px 30px 15px rgba(136, 196, 235, 0.7);
+        box-shadow: 0px 0px 30px 15px rgba(136, 196, 235, 0.7);
+    }
+    1000% {
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+        box-shadow: 0px 0px 0px 0px rgba(136, 196, 235, 0.7);
+    }
+}
