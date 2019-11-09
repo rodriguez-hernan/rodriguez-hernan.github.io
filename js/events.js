@@ -16,6 +16,7 @@ function addStartingContent() {
         monkey.addEventListener('mousedown', () => {
             monkey.src = "../assets/surprised.jpg";
         })
+        console.log("you can click on the monkey to see he's reaction")
     }
 
     addMagicInput();
