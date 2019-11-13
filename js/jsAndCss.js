@@ -13,6 +13,7 @@ function start() {
         grid.appendChild(node);
     }
     addButton();
+    document.querySelectorAll('.hidden').forEach(div => div.classList.remove('hidden'));
 }
 
 function addButton() {
@@ -31,5 +32,12 @@ function selectBox(id) {
 }
 
 function animate() {
-    console.log('starting animations');
+    const boxes = document.querySelectorAll('.selected');
+    const cheks = document.querySelectorAll(':checked');
+    const classes = [];
+    cheks.forEach(input => classes.push(input.value));
+    boxes.forEach(box => {
+        box.classList.remove('bigger', 'smaller', 'skewed', 'rotator', 'glower', 'fader');
+        classes.forEach(cl => box.classList.toggle(cl))
+    })
 }
