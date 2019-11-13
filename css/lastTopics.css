@@ -1,0 +1,25 @@
+#content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.sandbox {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    margin: 3rem auto;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid gray;
+    transition: 2s all;
+}
+
+.selected {
+    background-color: darkred;
+    border-radius: 5px;
+}
