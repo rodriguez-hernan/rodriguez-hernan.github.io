@@ -13,20 +13,20 @@
     <div id="content">
         <div class="header">
             <h2 class="title">Animation grid sandbox</h2>
-            <p>explanation...</p>
-            <button onclick="start()">Start</button>
+            <p>This page will show a grid of boxes. Go on and select the ones you want and play with the animations below</p>
+            <button id="start-btn" onclick="start()">Start</button>
         </div>
         <div class="sandbox"></div>
         <div class="controls">
             <div class="transform-ctr hidden">
-                <input type="radio" name="transformation" value="bigger">Bigger<br>
-                <input type="radio" name="transformation" value="smaller">Smaller<br>
-                <input type="radio" name="transformation" value="skewed">Skewed<br>
+                <input type="checkbox" onchange="check(event)" id="1" value="bigger">Bigger<br>
+                <input type="checkbox" onchange="check(event)" id="2" value="smaller">Smaller<br>
+                <input type="checkbox" onchange="check(event)" id="3" value="skewed">Skewed<br>
             </div>
             <div class="animation-ctr hidden">
-                <input type="radio" name="animation" value="rotator">Rotating<br>
-                <input type="radio" name="animation" value="glower">Glowing<br>
-                <input type="radio" name="animation" value="fader">Fading<br>
+                <input type="checkbox" onchange="check(event)" id="4" value="rotator">Rotating<br>
+                <input type="checkbox" onchange="check(event)" id="5" value="glower">Glowing<br>
+                <input type="checkbox" onchange="check(event)" id="6" value="fader">Fading<br>
             </div>
         </div>
     </div>

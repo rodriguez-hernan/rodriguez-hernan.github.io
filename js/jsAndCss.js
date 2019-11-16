@@ -14,15 +14,16 @@ function start() {
     }
     addButton();
     document.querySelectorAll('.hidden').forEach(div => div.classList.remove('hidden'));
+    document.getElementById("start-btn").setAttribute("disabled", true);
 }
 
 function addButton() {
     let node = document.createElement("div");
     let buttonNode = document.createElement("button");
     buttonNode.addEventListener('click', function() {
-        animate();
+        location = location;
     })
-    buttonNode.innerHTML = 'Start animations';
+    buttonNode.innerHTML = 'Reset';
     node.appendChild(buttonNode);
     document.getElementById("content").appendChild(node);
 }
@@ -31,13 +32,28 @@ function selectBox(id) {
     document.getElementById(id).classList.toggle('selected');
 }
 
-function animate() {
-    const boxes = document.querySelectorAll('.selected');
-    const cheks = document.querySelectorAll(':checked');
-    const classes = [];
-    cheks.forEach(input => classes.push(input.value));
-    boxes.forEach(box => {
-        box.classList.remove('bigger', 'smaller', 'skewed', 'rotator', 'glower', 'fader');
-        classes.forEach(cl => box.classList.toggle(cl))
+function check(e) {
+    const { value, checked, id } = e.target;
+
+    console.log('rest', uncheckRest(id))
+    if (checked) {
+        const boxes = document.querySelectorAll('.selected');
+        boxes.forEach(box => {
+            removeClasses(box);
+            box.classList.toggle(value);
+        })
+    }
+}
+
+function removeClasses(node) {
+    node.classList.remove('bigger', 'smaller', 'skewed', 'rotator', 'glower', 'fader');
+}
+
+function uncheckRest(id) {
+    const checks = document.querySelectorAll('input');
+    checks.forEach(check => {
+        if (check.id !== id) {
+            check.checked = false;
+        }
     })
 }
