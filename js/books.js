@@ -11,7 +11,7 @@ function ajaxCall(url, callback) {
 };
 
 function queryBook() {
-    let query = document.getElementById("author-input").value;
+    let query = document.getElementById("query").value;
     query = query.split(' ').join('+');
     const url = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
     if (query.length > 0) {
@@ -23,3 +23,6 @@ function parseAndStore(data) {
     const info = JSON.parse(data);
     console.log('info', info);
 }
+
+// Books Carousel for featured section
+// https://medium.com/@magyarn/simple-carousel-with-vanilla-js-3dd10a143ff2

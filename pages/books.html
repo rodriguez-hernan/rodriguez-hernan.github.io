@@ -10,25 +10,70 @@
 </head>
 
 <body>
-    <div id="content">
-        <header>
-            <h1>
+    <div class="content">
+        <header class="section">
+            <h1 class="header-title">
                 Books Search!
                 <span>find and save all your favourite books</span>
             </h1>
         </header>
         <main>
-            <div class="search-form">
-
+            <div class="search-form section">
+                <h4 class="search-header">
+                    Introduce the author's name or book title you want to look for
+                </h4>
+                <div class="search-box">
+                    <input
+                        type="text"
+                        class="search-box__input"
+                        placeholder="author or title"
+                        id="query"
+                    >
+                    <button class="search-box__btn" onclick="queryBook()">Search</button>
+                </div>
             </div>
-            <div class="search-results">
-
+            <div class="search-results section">
+                <!-- the content here will be dinamically added 
+                with javascript when a result is obtained by a search-->
+                <div class="book-card">
+                    <img src="../assets/books-assets/books-stack.jpg" alt="book" class="book-card__img">
+                    <h3>Title</h3>
+                    <p class="book-card__description"></p>
+                    <h4 class="book-card__author"></h4>
+                    <p class="book-card__rating">Average Rating: <span id="rating"></span></p>
+                    <div class="book-card__cta">
+                        <a href="" class="btn">Go to book</a>
+                        <button class="btn">Save Book</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="../assets/books-assets/books-stack.jpg" alt="book" class="book-card__img">
+                    <h3>Title</h3>
+                    <p class="book-card__description"></p>
+                    <h4 class="book-card__author"></h4>
+                    <p class="book-card__rating">Average Rating: <span id="rating"></span></p>
+                    <div class="book-card__cta">
+                        <a href="" class="btn">Go to book</a>
+                        <button class="btn">Save Book</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="../assets/books-assets/books-stack.jpg" alt="book" class="book-card__img">
+                    <h3>Title</h3>
+                    <p class="book-card__description"></p>
+                    <h4 class="book-card__author"></h4>
+                    <p class="book-card__rating">Average Rating: <span id="rating"></span></p>
+                    <div class="book-card__cta">
+                        <a href="" class="btn">Go to book</a>
+                        <button class="btn">Save Book</button>
+                    </div>
+                </div>
             </div>
             <div class="featured-section">
-
+                featured!
             </div>
             <div class="saved-section">
-
+                saved books
             </div>
         </main>
         <footer>footer</footer>
