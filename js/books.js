@@ -21,7 +21,24 @@ function queryBook() {
 
 function parseAndStore(data) {
     const info = JSON.parse(data);
-    console.log('info', info);
+    // console.log('info', info);
+    populateResults(info.items);
+}
+
+function populateResults(books) {
+    const section = document.querySelector('.search-results');
+    console.log(books);
+    books.forEach( book => {
+        const node = document.createElement("div");
+        node.setAttribute("class", "book-card");
+        if (book.volumeInfo.imageLinks) {
+            let bookImg = document.createElement("img");
+            bookImg.setAttribute("id", book.id);
+            bookImg.setAttribute("src", book.volumeInfo.imageLinks.thumbnail);
+            node.appendChild(bookImg);
+            section.appendChild(node);
+        }
+    })
 }
 
 // Books Carousel for featured section

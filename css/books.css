@@ -25,6 +25,7 @@ header {
   color: white;
   text-align: center;
   font-size: 3rem;
+  animation: fade-in-top 2s ease;
 }
 
 .header-title span {
@@ -34,6 +35,10 @@ header {
   font-style: italic;
   margin-top: 1rem;
   letter-spacing: 1.2px;
+  opacity: 0;
+  animation: fade-in 2s ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .section {
@@ -80,6 +85,7 @@ header {
   justify-content: space-evenly;
   background-color: #cdaa7d;
   padding: 3rem;
+  flex-wrap: wrap;
 }
 
 .book-card {
@@ -90,4 +96,26 @@ header {
 
 .book-card__img {
   max-width: 150px;
+}
+
+
+
+@keyframes fade-in-top {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
