@@ -1,121 +1,156 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Slab|Roboto:100i,400&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-h1,h2,h3,h4 { font-family: 'Roboto Slab', serif;}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto Slab', serif;
+}
+
 .content {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 header {
-  height: 80vh;
-  background-image: url("../assets/books-assets/wooden-back.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    height: 80vh;
+    background-image: url("../assets/books-assets/wooden-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header-title {
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  animation: fade-in-top 2s ease;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    animation: fade-in-top 2s ease;
 }
 
 .header-title span {
-  display: block;
-  font-size: 1rem;
-  font-weight: 100;
-  font-style: italic;
-  margin-top: 1rem;
-  letter-spacing: 1.2px;
-  opacity: 0;
-  animation: fade-in 2s ease;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+    display: block;
+    font-size: 1rem;
+    font-weight: 100;
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 1.2px;
+    opacity: 0;
+    animation: fade-in 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 .section {
-  margin-bottom: 25vh;
-  text-align: center;
+    margin-bottom: 25vh;
+    text-align: center;
 }
 
 .search-header {
-  font-size: 1.5rem;
-  font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: 100;
 }
 
 .search-box__input {
-  width: 25rem;
-  padding: .5rem;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  background-color: aliceblue;
-  border: 1px solid darkgray;
+    width: 25rem;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: aliceblue;
+    border: 1px solid darkgray;
 }
 
 .search-box__btn {
-  padding: .5rem 2rem;
-  font-size: 1.2rem;
-  background-color: darkgreen;
-  color: white;
-  font-weight: 700;
-  border-radius: 6px;
-  border: none;
+    padding: .5rem 2rem;
+    font-size: 1.2rem;
+    background-color: darkgreen;
+    color: white;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
 }
 
 .search-box__btn:hover {
-  cursor: pointer;
-  font-style: italic;
-  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+    font-style: italic;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .search-box__btn:active {
-  box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 .search-results {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #cdaa7d;
-  padding: 3rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #cdaa7d;
+    padding: 3rem;
+    flex-wrap: wrap;
 }
+
+.search-results a:link,
+.search-results a:visited,
+.search-results a:active {
+    text-decoration: none;
+}
+
+
+/* books */
 
 .book-card {
-  border: 1px solid gray;
-  padding: 2rem;
-  background-color: white;
+    width: 15rem;
+    height: 20rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1rem;
 }
 
-.book-card__img {
-  max-width: 150px;
+.book-card:hover {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.book-card:hover>h4,
+.book-card:hover>p {
+    color: white;
+}
+
+.book-card__title,
+.book-card__description {
+    color: transparent;
 }
 
 
+/* ANIMATIONS */
 
 @keyframes fade-in-top {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
