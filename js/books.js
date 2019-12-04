@@ -19,25 +19,24 @@ function queryBook() {
     }
 }
 
+let booksResultSet;
+
 function parseAndStore(data) {
-    const info = JSON.parse(data);
-    searchResults(info.items);
+    booksResultSet = JSON.parse(data);
+    console.log(typeof booksResultSet)
+    console.log('books **', booksResultSet)
+    searchResults(booksResultSet.items);
 }
 
 function searchResults(books) {
     const section = document.querySelector('.search-results');
     books.forEach(book => {
-        const link = document.createElement("a");
-        link.setAttribute("href", book.volumeInfo.previewLink);
-        link.setAttribute("alt", book.volumeInfo.title);
-
         const node = document.createElement("div");
         node.setAttribute("class", "book-card");
+        node.setAttribute("id", book.id);
         if (book.volumeInfo.imageLinks) {
-            // poner imagen como background
             node.style.backgroundImage = `url(${book.volumeInfo.imageLinks.thumbnail})`;
 
-            // poner titulo y descripcion como texto
             const title = document.createElement("h4");
             title.setAttribute('class', 'book-card__title');
             title.textContent = book.volumeInfo.title;
@@ -48,12 +47,12 @@ function searchResults(books) {
 
             node.appendChild(title);
             node.appendChild(description);
-            link.appendChild(node);
-            section.appendChild(link);
+            section.appendChild(node);
         }
     })
 
     addHovers();
+    addModalEvent();
 }
 
 function formatedDesc(text) {
@@ -77,5 +76,85 @@ function addHovers() {
     })
 }
 
-// Books Carousel for featured section
-// https://medium.com/@magyarn/simple-carousel-with-vanilla-js-3dd10a143ff2
+// global modal variable
+const modal = document.getElementById("myModal");
+
+function addModalEvent() {
+    const books = document.querySelectorAll('.book-card');
+    books.forEach(book => {
+        book.addEventListener('click', function() {
+            modal.classList.add('open-modal');
+            console.log('book id', book.id)
+            populateModal(book.id);
+        })
+    })
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.classList.remove('open-modal');
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.classList.remove('open-modal');
+        }
+    }
+    // Books Carousel for featured section
+    // https://medium.com/@magyarn/simple-carousel-with-vanilla-js-3dd10a143ff2
+
+function populateModal(id) {
+    const selected = booksResultSet.items.filter(book => book.id == id)[0];
+    console.log('selected', selected);
+    document.querySelector('#book-modal_img').src = selected.volumeInfo.imageLinks.thumbnail;
+    document.querySelector('.book-modal_header').innerHTML = selected.volumeInfo.title;
+    document.querySelector('.book-modal_desc').innerHTML = selected.volumeInfo.description;
+    document.querySelector('.book-modal_author').innerHTML = selected.volumeInfo.authors[0];
+    document.querySelector('.book-modal_add').addEventListener('click', () => { saveBook(selected) });
+    document.querySelector('.book-modal_goTo').href = selected.volumeInfo.infoLink;
+
+}
+
+function saveBook(book) {
+    modal.classList.remove('open-modal');
+    const bookCollection = fetchInLocalStorage('bookCollection');
+    // convert to array and push
+    const bookArray = Array.from(bookCollection);
+    bookArray.push(book, book.id);
+    // convert to set and save
+    const bookSet = new Set(bookArray);
+    saveInLocalStorage(bookSet, 'bookCollection');
+}
+
+
+// Local Storage Utilities
+
+function fetchInLocalStorage(item) {
+    const ls = localStorage.getItem(item);
+    return JSON.parse(ls);
+}
+
+function saveInLocalStorage(obj, lsItem) {
+    const objString = JSON.stringify(obj);
+    localStorage.setItem(lsItem, objString);
+}
+
+function verifyLS() {
+    const postList = localStorage.getItem('bookCollection');
+    if (postList === null) {
+        localStorage.setItem('bookCollection', '[]');
+    }
+}
+
+function renderSavedBooks() {
+    verifyLS();
+    const bookCollection = fetchInLocalStorage('bookCollection');
+    const bookArray = Array.from(bookCollection);
+    console.log('bookCollection', typeof bookCollection);
+    bookArray.forEach(book => {
+        // add each book to section  
+    })
+}

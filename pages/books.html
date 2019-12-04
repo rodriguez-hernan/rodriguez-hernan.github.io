@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../css/books.css'>
 </head>
 
-<body>
+<body onload="renderSavedBooks()">
     <div class="content">
         <header class="section">
             <h1 class="header-title">
@@ -27,21 +27,30 @@
                     <button class="search-box__btn" onclick="queryBook()">Search</button>
                 </div>
             </div>
-            <div class="search-results section">
-                <div class="book-card">
-                    <h4 class="book-card__title transparent">J.R.R. Tolkien</h4>
-                    <p class="book-card__description transparent">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            <div class="search-results section"></div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="book-content">
+                        <img id="book-modal_img" src="#" alt="#">
+                        <div id="book-modal" class="book-modal">
+                            <h3 class="book-modal_header"></h3>
+                            <p class="book-modal_desc"></p>
+                            <p class="book-modal_author"></p>
+                            <button class="book-modal_add">Save Book</button>
+                            <a href="#" class="book-modal_goTo">Go to Book</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="featured-section">
+            <!-- <div class="featured-section">
                 featured!
-            </div>
-            <div class="saved-section">
-                saved books
-            </div>
+            </div> -->
+            <div class="saved-section"></div>
         </main>
-        <footer>footer</footer>
+        <!-- <footer>footer</footer> -->
     </div>
     <script src='../js/books.js'></script>
 </body>
