@@ -27,33 +27,36 @@
                     <button class="search-box__btn" onclick="queryBook()">Search</button>
                 </div>
             </div>
-            <div class="search-results section"></div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="book-content">
-                        <img id="book-modal_img" src="#" alt="#">
-                        <div id="book-modal" class="book-modal">
-                            <h3 class="book-modal_header"></h3>
-                            <p class="book-modal_desc"></p>
-                            <p class="book-modal_author-desc">
-                                Author:
-                                <span class="book-modal_author"></span>
-                            </p>
-                            <button class="book-modal_add">Save Book</button>
-                            <a href="#" class="book-modal_goTo">Go to Book</a>
-                        </div>
+            <div class="search-results section">
+                <h3 class="search-loader">Searching for books</h3>
+            </div>
+            <div class="saved-section">
+                <h3 class="saved-section_header">
+                    Saved books
+                </h3>
+            </div>
+
+        </main>
+
+        <!-- Book Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="book-content">
+                    <img id="book-modal_img" src="#" alt="#">
+                    <div id="book-modal" class="book-modal">
+                        <h3 class="book-modal_header"></h3>
+                        <p class="book-modal_desc"></p>
+                        <p class="book-modal_author-desc">
+                            Author:
+                            <span class="book-modal_author"></span>
+                        </p>
+                        <button class="book-modal_add"></button>
+                        <a href="#" class="book-modal_goTo">Go to Book</a>
                     </div>
                 </div>
             </div>
-            <!-- <div class="featured-section">
-                featured!
-            </div> -->
-            <div class="saved-section"></div>
-        </main>
-        <!-- <footer>footer</footer> -->
+        </div>
     </div>
     <script src='../js/books.js'></script>
 </body>
