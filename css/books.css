@@ -132,6 +132,7 @@ header {
 .book-card:hover {
     padding: 10px;
     cursor: pointer;
+    animation: rotating 2s ease-out;
 }
 
 .book-card:hover>h4,
@@ -246,7 +247,9 @@ a.book-modal_goTo:link {
 
 .saved-books-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .saved-container {
@@ -336,5 +339,20 @@ a.book-modal_goTo:link {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
